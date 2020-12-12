@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int maih() {
+int main() {
 	printf("Hello!\n");
 	return 0;
 }
