@@ -1,0 +1,16 @@
+name: Compile and Run
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    strategy:
+      matrix:
+        compiler: [gcc, clang]
+    steps:
+    - uses: actions/checkout@v2
+    - name: Compile using C compiler and execute
+      env:
+        compiler_name: ${{ matrix.compiler }}
+      run: |
+        $compiler_name Ankur.c
+        ./a.out
